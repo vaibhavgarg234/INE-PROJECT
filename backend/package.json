@@ -1,0 +1,22 @@
+{
+  "name": "ine-price-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend for INE Product Price Tracker — scrapes mock store prices on schedule",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "scrape:headed": "node -e \"process.env.HEADED='true'; require('./scraper').scrapeAllTracked().then(r => { console.log(JSON.stringify(r, null, 2)); process.exit(0); }).catch(e => { console.error(e); process.exit(1); })\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "playwright": "^1.48.0",
+    "ws": "^8.21.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

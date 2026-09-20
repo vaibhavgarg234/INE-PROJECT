@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build & Cache
+dist/
+**/dist/
+.vite/
+**/.vite/
+coverage/
+
+# Environment files
+.env
+**/backend/.env
+**/frontend/.env
+!.env.example
+!**/backend/.env.example
+!**/frontend/.env.example
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
