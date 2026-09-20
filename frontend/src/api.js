@@ -1,4 +1,7 @@
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3005/api';
+export const API_URL = (rawApiUrl.includes('<') || rawApiUrl.includes('>')) 
+  ? 'http://localhost:3005/api' 
+  : rawApiUrl.replace(/\/+$/, '');
 
 export const api = {
   async search(query) {
